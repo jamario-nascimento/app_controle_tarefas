@@ -14,3 +14,9 @@ Esse comando define o bootstrap como forntend para o laravel  e o --auth inclui 
 
 Baixa as dependencias de front e roda em modo dev
 ```npm install && npm run dev```
+
+Criando templates de email
+```php artisan make:mail MensagemTesteMail --markdown emails.mensagem-teste```
+
+Passar o parametro 14 laravel mail ele resources de email para /resources/views/vendor/mail
+```php artisan vendor:publish```
