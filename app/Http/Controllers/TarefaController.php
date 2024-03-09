@@ -84,7 +84,7 @@ class TarefaController extends Controller
     public function edit(Tarefa $tarefa)
     {
         $user_id = auth()->user()->id;
-       
+
         if ($user_id == $tarefa->user_id) {
             return view('tarefa.edit', ['tarefa' => $tarefa]);
         }
@@ -105,14 +105,13 @@ class TarefaController extends Controller
         //    $tarefa = Tarefa::update($dados);
         //    $destinatario = auth()->user()->email;
         //    Mail::to($destinatario)->send(new NovaTarefaMail($tarefa));
-        
+
         if (!$tarefa->user_id == auth()->user()->id) {
             return view('acesso-negado');
         }
 
         $tarefa->update($request->all());
         return redirect()->route('tarefa.show', ['tarefa' => $tarefa->id]);
-       
     }
 
     /**
@@ -133,14 +132,13 @@ class TarefaController extends Controller
 
     public function exportacao($extencao)
     {
-        $nome_arquivo = '';
-        if($extencao == 'xlsx'){
-            $nome_arquivo .= '.xlsx'.$extencao;
-        }else if ($extencao == 'csv'){
-            $nome_arquivo .= '.csv'.$extencao;
+    
+        if(in_array($extencao, ['xlsx', 'csv', 'pdf'])){
+            return Excel::download(new TarefasExport, 'tarefas.' . $extencao);
         }else{
             return redirect()->route('tarefa.index');
         }
-        return Excel::download(new TarefasExport, 'tarefas.'.$extencao);
+        
+        
     }
 }

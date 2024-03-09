@@ -28,3 +28,6 @@ Instalando laravel-excel
 
 Exportanto dados com Laravel excel
 ```php artisan make:export TarefasExport --model=Tarefa```
+
+Instalando MPDF
+```composer require mpdf/mpdf:^8.0.10```
