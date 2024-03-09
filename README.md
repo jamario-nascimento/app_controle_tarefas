@@ -36,3 +36,4 @@ Instalando MPDF
 Instalando DOMPDF
 ```composer require barryvdh/laravel-dompdf:^0.9.0```
 ```php artisan vendor:publish --provider="Barryvdh\DomPDF\ServiceProvider"```
+

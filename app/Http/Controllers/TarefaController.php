@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exports\TarefasExport;
 use App\Mail\NovaTarefaMail;
 use App\Models\Tarefa;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -140,5 +141,12 @@ class TarefaController extends Controller
         }
         
         
+    }
+
+    public function exportar()
+    {
+        $tarefas = Tarefa::where('user_id', Auth::user()->id)->get();
+        $pdf = PDF::loadView('tarefa.pdf',['tarefas' => $tarefas]);
+        return $pdf->download('lista_de_tarefas.pdf');
     }
 }
