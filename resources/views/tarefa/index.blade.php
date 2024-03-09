@@ -14,7 +14,7 @@
                             <a href="{{ route('tarefa.exportacao', ['extencao' => 'csv']) }}"
                                 class="btn btn-warning">CSV</a>
                             <a href="{{ route('tarefa.exportacao', ['extencao' => 'pdf']) }}" class="btn btn-danger">PDF</a>
-                            <a href="{{ route('tarefa.exportar') }}" class="btn btn-info">DOMPDF</a>
+                            <a href="{{ route('tarefa.exportar') }}" target="_blank" class="btn btn-info">DOMPDF</a>
                         </div>
 
                     </div>
