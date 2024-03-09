@@ -9,7 +9,8 @@
                         Tarefas 
                         <div class="btn-group float-end" role="group" aria-label="Basic example">
                             <a href="{{ route('tarefa.create') }}" class="btn btn-primary">Adicionar Tarefa</a>
-                        <a href="{{ route('tarefa.exportacao') }}" class="btn btn-success ">XLSX</a>
+                        <a href="{{ route('tarefa.exportacao', ['extencao' => 'xlsx']) }}" class="btn btn-success">XLSX</a>
+                        <a href="{{ route('tarefa.exportacao', ['extencao' => 'csv']) }}" class="btn btn-success">CSV</a>
                           </div>
                         
                     </div>
