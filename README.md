@@ -4,6 +4,7 @@ laravel/ui
 
 - [Instalação do NodeJS obrigatoria para usar o npm](https://nodejs.org/en).
 - [Trabalhando com excel no laravel](https://laravel-excel.com/)
+- [Trabanhando com biblioteca DOMPDF para Laravel](https://github.com/barryvdh/laravel-dompdf)
 
 ### Instalando Laravel UI
 
@@ -31,3 +32,7 @@ Exportanto dados com Laravel excel
 
 Instalando MPDF
 ```composer require mpdf/mpdf:^8.0.10```
+
+Instalando DOMPDF
+```composer require barryvdh/laravel-dompdf:^0.9.0```
+```php artisan vendor:publish --provider="Barryvdh\DomPDF\ServiceProvider"```
