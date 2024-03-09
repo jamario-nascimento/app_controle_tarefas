@@ -3,8 +3,9 @@ laravel v 8.5.9
 laravel/ui
 
 - [Instalação do NodeJS obrigatoria para usar o npm](https://nodejs.org/en).
+- [Trabalhando com excel no laravel](https://laravel-excel.com/)
 
-### Inmstalando Laravel UI
+### Instalando Laravel UI
 
 Adiciona o ui para interfaces frontend no Laravel
 ```composer require laravel/ui:^3.2```
@@ -20,3 +21,10 @@ Criando templates de email
 
 Passar o parametro 14 laravel mail ele resources de email para /resources/views/vendor/mail
 ```php artisan vendor:publish```
+
+Instalando laravel-excel
+```composer require maatwebsite/excel:^3.1```
+```php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider" --tag=config```
+
+Exportanto dados com Laravel excel
+```php artisan make:export TarefasExport --model=Tarefa```

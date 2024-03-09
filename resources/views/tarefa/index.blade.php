@@ -5,7 +5,14 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Tarefas <a href="{{ route('tarefa.create') }}" class="btn btn-primary float-end">Adicionar Tarefa</a></div>
+                    <div class="card-header">
+                        Tarefas 
+                        <div class="btn-group float-end" role="group" aria-label="Basic example">
+                            <a href="{{ route('tarefa.create') }}" class="btn btn-primary">Adicionar Tarefa</a>
+                        <a href="{{ route('tarefa.exportacao') }}" class="btn btn-success ">XLSX</a>
+                          </div>
+                        
+                    </div>
 
                     <div class="card-body">
                         <table class="table">
